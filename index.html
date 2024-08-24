@@ -3,26 +3,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Study</title>
+    <title>Search</title>
 </head>
 
-<body>
-    <div id="box">
-        <div id="logo">
-            <p id="G">G</p>
-            <p id="o-1">o</p>
-            <p id="o-2">o</p>
-            <p id="g-2">g</p>
-            <p id="l">l</p>
-            <p id="e">e</p>      
+<body>  
+    <div class = "top-links-div">
+        <a href = "image_search.html" type="button" class = "link-button"> Google Image Search</a>
+        <a href="advanced_search.html" type="button" class = "link-button"> Google Advanced Search</a>
+    </div>
+
+    <div class="box">
+        <div class="logo">
+            <p class="G">G</p>
+            <p class="o-1">o</p>
+            <p class="o-2">o</p>
+            <p class="g-2">g</p>
+            <p class="l">l</p>
+            <p class="e">e</p>      
         </div>
 
-        <form id="search-form" action="https://google.com/search">
-            <div id="search">
+        <form class="search-form" action="https://google.com/search">
+            <div class="search">
                 <input type="text" name="q" placeholder="Search Google or type a URL">
-                <button type="submit" id="search-btn">Google Search</button>
+            </div>
+            <div>
+                <button type="submit" class = "search-btn">Google Search</button>
+                <button type="submit" class = "search-btn" onclick="luckySearch()">I'm feeling lucky</button>
+
             </div>
         </form>
     </div>
+    <script>
+    
+        function luckySearch() {
+            // Add the 'I'm Feeling Lucky' parameter before submitting the form
+            const form = document.querySelector('.search-form');
+            const luckyInput = document.createElement('input');
+            luckyInput.type = 'hidden';
+            luckyInput.name = 'btnI';
+            luckyInput.value = 'I';
+            form.appendChild(luckyInput);
+        }
+    
+    </script>
 </body>
 </html>
